@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class DoublyLinkedList{
+public class DoublyLinkedListAns{
     Node head;
     Node tail; 
 
@@ -18,11 +18,40 @@ public class DoublyLinkedList{
       // WRTIE YOUR CODE BELOW *^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^
 
       public void insert(int value, int index){
+        Node itt = head;
+        for(int n=0; n<index; n++){
+          itt = itt.next;
+        }
+        Node temp = new Node(value);
+        Node prev = itt.previous;
+
+        temp.next = itt;
+        temp.previous = prev;
+        itt.previous = temp;
+        prev.next = temp;
+
+        
+        printList();
 
       }
 
       public int[] intoArray(){
-        return null;
+        int size = 0;
+        Node itterator = head;
+        while(itterator != null){
+          size++;
+          itterator = itterator.next;
+        }
+        int returnMe[] = new int[size];
+        itterator = head;
+        int count = 0;
+        while(itterator != null){
+          returnMe[count] = itterator.data;
+          itterator = itterator.next;
+          count++;
+
+        }
+        return(returnMe);
       }
 
 
@@ -63,7 +92,7 @@ public class DoublyLinkedList{
       }
 
       public static void main(String[] args){
-        DoublyLinkedList list = new DoublyLinkedList();
+        DoublyLinkedListAns list = new DoublyLinkedListAns();
         list.add(1);
         list.add(2);
         list.add(3);
