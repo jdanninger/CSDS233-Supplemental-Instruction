@@ -3,7 +3,7 @@ import java.util.Arrays;
 public class DoublyLinkedList{
     Node head;
     Node tail; 
-
+    int size = 0;
     private class Node {
 
         int data;
@@ -44,6 +44,7 @@ public class DoublyLinkedList{
           tail.next.previous = tail;  //sets new node to point backwards to tail
           tail = tail.next;
         }
+        size++;
       }
       public void printList() { //this prints the LL out in console
         String printMe = "";
