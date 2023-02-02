@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class DoublyLinkedList{
     Node head;
     Node tail; 
@@ -61,7 +63,7 @@ public class DoublyLinkedList{
       }
 
       public static void main(String[] args){
-        DoublyLinkedList list = new DoublyLinkedList();
+        DoublyLinkedListAns list = new DoublyLinkedListAns();
         list.add(1);
         list.add(2);
         list.add(3);
@@ -71,7 +73,7 @@ public class DoublyLinkedList{
         list.add(7);
         int[] arr = new int[]{ 1,2,3,4,5,6,7 }; 
 
-        if(arr.equals(list.intoArray())){
+        if(Arrays.equals(arr, list.intoArray())){
           System.out.println("intoArray Works!");
         }else{
           System.out.println("intoArray doesnt work");
