@@ -1,6 +1,5 @@
 
 // *^*^*^*^*^Imports Below *^*^*^*^*^
-// import java.io.*;
 import java.util.LinkedList;
 import java.util.ListIterator;
 
@@ -12,14 +11,39 @@ class IteratorPractice {
     public static int numOccur(LinkedList<String> list, String key) {
         int numOccur = 0;
         ListIterator<String> iter = list.listIterator();
+
+
+
         return (numOccur);
     }
+
+
+
+
+
+
+
 
     public static int length(LinkedList<String> list) {
         int len = 0;
         ListIterator<String> iter = list.listIterator();
+
+        while(iter.hasNext()){
+            iter.next();
+            len++;
+        }
+
         return (len);
     }
+
+
+
+
+
+
+
+
+
 
     public static String[] convertToArray(LinkedList<String> list) {
         String[] returnMe = new String[length(list)];
